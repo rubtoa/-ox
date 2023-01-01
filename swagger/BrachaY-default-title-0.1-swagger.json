@@ -1,0 +1,1074 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "defaultTitle",
+    "description" : "defaultDescription",
+    "version" : "0.1"
+  },
+  "servers" : [ {
+    "url" : "https://my.imperva.com"
+  } ],
+  "paths" : {
+    "/api/prov/v1/account" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/data-privacy/show" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/subaccounts/add" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "ref_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "logs_account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "sub_account_name",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "aaa"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "parent_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "log_level",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/delete" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/listSubAccounts" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "page_num",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "1"
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "3"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/setSftpSiemStorage" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "asfdasz"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "user_name",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "host",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "awedscz"
+        }, {
+          "name" : "destination_folder",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "aesfd"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/testSftpConnection&api_id=123&api_key=123&account_id=50&host=awedscz&user_name=123&password=asfdasz&destination_folder=aesfd&save_on_success=true" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "404" : {
+            "description" : "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/configure" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "param",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "param"
+        }, {
+          "name" : "value",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/subaccounts/delete" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "sub_account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123456"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/sitesgroups/manualCertificate/upload" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "certificate",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "asd"
+        }, {
+          "name" : "network_slice",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "ad"
+        }, {
+          "name" : "private_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "asd"
+        }, {
+          "name" : "passphrase",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "asd"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/testS3Connection" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "secret_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "bucket_name",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "bucket"
+        }, {
+          "name" : "access_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "save_on_success",
+          "in" : "query",
+          "schema" : {
+            "type" : "boolean"
+          },
+          "example" : "true"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/data-privacy/set-region-default" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "data_storage_region",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "asdfzf"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/subscription" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/setlog" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "log_level",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/setAmazonSiemStorage" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "secret_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "bucket_name",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "bucket"
+        }, {
+          "name" : "access_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/setDefaultSiemStorage" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/testSftpConnection" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "asfdasz"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "user_name",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "host",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "awedscz"
+        }, {
+          "name" : "destination_folder",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "aesfd"
+        }, {
+          "name" : "save_on_success",
+          "in" : "query",
+          "schema" : {
+            "type" : "boolean"
+          },
+          "example" : "true"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/gettoken" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    },
+    "/api/prov/v1/accounts/list" : {
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "api_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "account_id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "50"
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "123"
+        }, {
+          "name" : "page_num",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "1"
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "3"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "https://my.imperva.com"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "https://my.imperva.com"
+      } ]
+    }
+  }
+}
