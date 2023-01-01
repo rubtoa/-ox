@@ -19,25 +19,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Get OAS
         run: |
-          ls -al
-          ls /home/runner/work/-ox/-ox/swagger/ronen.json
+          curl http://ronen.atias.org/swagger.json -o swagger.json
+
       - name: Run Docker
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb oas -f /home/runner/work/-ox/-ox/swagger/ronen.json --min-severity Critical --api-key=f59274ecef9c487ba518b7892c99f3cf --no-active
+          cherrybomb oas -f /home/swagger.json --min-severity Critical --api-key=f59274ecef9c487ba518b7892c99f3cf --no-active
 
       - name: Run Param Table
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb param-table -f /home/runner/work/-ox/-ox/swagger/ronen.json --api-key=f59274ecef9c487ba518b7892c99f3cf
+          cherrybomb param-table -f /home/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
 
       - name: Run Ep Table
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb ep-table -f /home/runner/work/-ox/-ox/swagger/ronen.json --api-key=f59274ecef9c487ba518b7892c99f3cf
+          cherrybomb ep-table -f /home/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
