@@ -22,6 +22,7 @@ jobs:
       - name: Get OAS
         run: |
           curl https://github.com/cloudflare/api-schemas/blob/main/openapi.json -o swagger.json
+          echo Working Dir `pwd`
 
       - name: Run Docker
         run: >
