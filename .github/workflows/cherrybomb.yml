@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get OAS
         run: |
-          curl https://github.com/rubtoa/-ox/blob/main/swagger/laksri-twilio-v1-swagger.json -o /home/runner/work/-ox/-ox/swagger.json
+          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/BrachaY-default-title-0.1-swagger.json?token=GHSAT0AAAAAAB45Y4XYUGGMZRUC347OKJJQY5RR5UA -o /home/runner/work/-ox/-ox/swagger.json
           echo Working Dir `pwd`
 
       - name: Run Docker
