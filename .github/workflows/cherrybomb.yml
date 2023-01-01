@@ -19,10 +19,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Get OAS
         run: |
-          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/ronen.json?token=GHSAT0AAAAAAB45Y4XZOMMPZOOMJWF7TKWUY5RSUUQ -o swagger.json
-          head swagger.json
+          ls -al
       - name: Run Docker
         run: >
           docker run
