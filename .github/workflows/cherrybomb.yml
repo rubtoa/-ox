@@ -21,23 +21,22 @@ jobs:
     steps:
       - name: Get OAS
         run: |
-          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/BrachaY-default-title-0.1-swagger.json?token=GHSAT0AAAAAAB45Y4XYUGGMZRUC347OKJJQY5RR5UA -o /home/runner/work/-ox/-ox/swagger.json
-          echo Working Dir `pwd`
+          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/laksri-twilio-v1-swagger.json?token=GHSAT0AAAAAAB45Y4XZDPKRKZ7HQQ4QZA4SY5RSBIA -o swagger.json
 
       - name: Run Docker
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb oas -f /home/runner/work/-ox/-ox/swagger.json --min-severity Critical --api-key=f59274ecef9c487ba518b7892c99f3cf --no-active
+          cherrybomb oas -f /home/swagger.json --min-severity Critical --api-key=f59274ecef9c487ba518b7892c99f3cf --no-active
 
       - name: Run Param Table
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb param-table -f /home/runner/work/-ox/-ox/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
+          cherrybomb param-table -f /home/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
 
       - name: Run Ep Table
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb ep-table -f /home/runner/work/-ox/-ox/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
+          cherrybomb ep-table -f /home/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
