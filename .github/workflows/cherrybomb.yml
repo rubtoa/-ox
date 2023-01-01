@@ -34,10 +34,10 @@ jobs:
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb param-table -f swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
+          cherrybomb param-table -f /home/runner/work/-ox/-ox/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
 
       - name: Run Ep Table
         run: >
           docker run
           --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
-          cherrybomb ep-table -f swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
+          cherrybomb ep-table -f /home/runner/work/-ox/-ox/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
