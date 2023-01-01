@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get OAS
         run: |
-          curl https://github.com/cloudflare/api-schemas/blob/main/openapi.json -o swagger.json
+          curl https://github.com/rubtoa/-ox/blob/main/swagger/laksri-twilio-v1-swagger.json -o swagger.json
           echo Working Dir `pwd`
 
       - name: Run Docker
