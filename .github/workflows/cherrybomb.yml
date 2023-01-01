@@ -23,6 +23,7 @@ jobs:
       - name: Get OAS
         run: |
           ls -al
+          ls /home/runner/work/-ox/-ox/swagger/ronen.json
       - name: Run Docker
         run: >
           docker run
