@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get OAS
+        run: |
+          curl https://docs-be.imperva.com/bundle/cloud-application-security/attach/cloud-waf-api.yaml -o swagger.json
+
+      - name: Run Docker
+        run: >
+          docker run
+          --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
+          cherrybomb oas -f /home/swagger.json --min-severity Critical --api-key=f59274ecef9c487ba518b7892c99f3cf --no-active
+
+      - name: Run Param Table
+        run: >
+          docker run
+          --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
+          cherrybomb param-table -f /home/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
+
+      - name: Run Ep Table
+        run: >
+          docker run
+          --mount type=bind,source="$(pwd)",destination=/home public.ecr.aws/blst-security/cherrybomb:latest
+          cherrybomb ep-table -f /home/swagger.json --api-key=f59274ecef9c487ba518b7892c99f3cf
