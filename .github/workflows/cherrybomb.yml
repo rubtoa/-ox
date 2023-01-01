@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get OAS
         run: |
-          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/laksri-twilio-v1-swagger.json?token=GHSAT0AAAAAAB45Y4XZDPKRKZ7HQQ4QZA4SY5RSBIA -o swagger.json
+          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/laksri-twilio-v1-swagger.json?token=GHSAT0AAAAAAB45Y4XZ2FR7LDETMZXBXSP4Y5RSGEQ -o swagger.json
 
       - name: Run Docker
         run: >
