@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get OAS
         run: |
-          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/ronen.json?token=GHSAT0AAAAAAB45Y4XYWIHGTKDZXJSUEGKWY5RSNAQ -o swagger.json
+          curl https://raw.githubusercontent.com/rubtoa/-ox/main/swagger/ronen.json?token=GHSAT0AAAAAAB45Y4XZOMMPZOOMJWF7TKWUY5RSUUQ -o swagger.json
           head swagger.json
           head /home/swagger.json
       - name: Run Docker
