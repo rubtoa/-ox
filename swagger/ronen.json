@@ -1,0 +1,979 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Imperva API2 WAF",
+    "description": "To better align with REST API standards and best practices, Imperva is gradually rolling out a new version of APIs, available for your use in managing your Cloud Application Security account and websites. These APIs provide either an alternative to existing APIs, or provide APIs with new functionality. For more details about Imperva APIs, see <a href=https://docs.imperva.com/bundle/api-docs/page/api/api-overview.htm>Imperva API Documentation</a>.",
+    "version": "2.0.0"
+  },
+  "externalDocs": {
+    "description": "Terms of service in the absence of an applicable signed agreement between you and Imperva",
+    "url": "https://www.imperva.com/legal/license-agreement/"
+  },
+  "host": "my.imperva.com",
+  "basePath": "/api/prov/v2",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "api_id": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "x-API-Id"
+    },
+    "api_key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "x-API-Key"
+    }
+  },
+  "security": [
+    {
+      "api_id": [],
+      "api_key": []
+    }
+  ],
+  "paths": {
+    "/sites/{siteId}/rules": {
+      "post": {
+        "summary": "Create rule",
+        "description": "Create rule",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "rule",
+            "in": "body",
+            "description": "The rule to create",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Rule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "Rules"
+        ]
+      }
+    },
+    "/sites/{siteId}/rules/{ruleId}": {
+      "put": {
+        "summary": "Overwrite rule - must contain valid rule id",
+        "description": "Overwrite rule",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "Numeric identifier of the site to operate on",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "Numeric identifier of the rule to operate on",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "rule",
+            "in": "body",
+            "description": "The rule to overwrite",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Rule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "Rules"
+        ]
+      },
+      "get": {
+        "summary": "Read rule - must contain valid rule id",
+        "description": "Read rule",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "Numeric identifier of the site to operate on",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "Numeric identifier of the rule to operate on",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Rules"
+        ]
+      },
+      "post": {
+        "summary": "Update rule - must contain valid rule id",
+        "description": "Update rule",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "Numeric identifier of the site to operate on",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "Numeric identifier of the rule to operate on",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "rule",
+            "in": "body",
+            "description": "The rule to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Rule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": [
+          "Rules"
+        ]
+      },
+      "delete": {
+        "summary": "Delete rule - must contain valid rule id",
+        "description": "Delete rule",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "Numeric identifier of the site to operate on",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "Numeric identifier of the rule to operate on",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "405": {
+            "description": "Rule can not be deleted"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Rules"
+        ]
+      }
+    },
+    "/sites/{siteId}/settings/masking": {
+      "get": {
+        "summary": "Returns a masking setting for the given site.",
+        "description": "Read masking settings.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      },
+      "post": {
+        "summary": "Update masking settings for site",
+        "description": "Update masking settings.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "maskingSettings",
+            "in": "body",
+            "description": "The masking setting to configure",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MaskingSettings"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      }
+    },
+    "/sites/{extSiteId}/settings/general/additionalTxtRecords": {
+      "get": {
+        "summary": "Return all TXT records defined for the site in Cloud WAF",
+        "description": "Return all TXT records defined for the site in Cloud WAF",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      },
+      "post": {
+        "summary": "Create or modify one or more of the TXT records defined for the site in Cloud WAF  (partial update)",
+        "description": "Create or modify one or more of the TXT records defined for the site in Cloud WAF  (partial update)",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "txt_record_value_one",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "New value for txt record number one"
+          },
+          {
+            "name": "txt_record_value_two",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "New value for txt record number two"
+          },
+          {
+            "name": "txt_record_value_three",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "New value for txt record number three"
+          },
+          {
+            "name": "txt_record_value_four",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "New value for txt record number four"
+          },
+          {
+            "name": "txt_record_value_five",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "New value for txt record number five"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      },
+      "put": {
+        "summary": "Overwrite a specific TXT record that is defined for the site in Cloud WAF  (full update)",
+        "description": "Overwrite a specific TXT record that is defined for the site in Cloud WAF  (full update)",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "record_number",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Number of txt record to edit"
+          },
+          {
+            "name": "txt_record_value",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "New value for txt record"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a specific TXT record that is defined for the site in Cloud WAF",
+        "description": "Delete a specific TXT record that is defined for the site in Cloud WAF",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "record_number",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Number of txt record to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      }
+    },
+    "/sites/{extSiteId}/settings/general/additionalTxtRecords/delete-all": {
+      "delete": {
+        "summary": "Delete all TXT records that are defined for the site in Cloud WAF",
+        "description": "Delete all TXT records that are defined for the site in Cloud WAF",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "Site id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "404": {
+            "description": "Resource not found"
+          },
+          "406": {
+            "description": "Invalid Input"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      }
+    },
+    "/sites/{extSiteId}/hsmCertificate": {
+      "put": {
+        "summary": "Upload custom certificate and HSM credentials",
+        "description": "Upload a custom certificate without the private key. Provide credentials for the HSM service that is managing your private key.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "The Imperva ID of your website.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "The private key asset details in your HSM service.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hsmBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Custom Certificate with HSM Support"
+        ]
+      },
+      "delete": {
+        "summary": "Remove custom certificate and HSM credentials",
+        "description": "Remove custom certificate and HSM credentials.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "The Imperva ID of your website.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Custom Certificate with HSM Support"
+        ]
+      }
+    },
+    "/sites/{extSiteId}/hsmCertificate/connectivityTest": {
+      "get": {
+        "summary": "Test connectivity between Imperva and HSM provider",
+        "description": "Test connectivity between Imperva and your HSM service provider. This endpoint also validates the integrity between the certificate and the private key, provided by the HSM service.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "The Imperva ID of your website.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Custom Certificate with HSM Support"
+        ]
+      }
+    },
+    "/sites/{extSiteId}/customCertificate": {
+      "put": {
+        "summary": "Upload custom certificate",
+        "description": "Upload your own SSL certificate to Imperva for a specified website. Supported file formats: PFX, PEM, CER. This certificate is presented to SNI-supporting clients only.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "The Imperva ID of your website.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customCertificateBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized siteId"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Custom Certificate"
+        ]
+      },
+      "delete": {
+        "summary": "Remove custom certificate",
+        "description": "Remove the custom certificate uploaded to Imperva for a specified website.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "extSiteId",
+            "in": "path",
+            "description": "The Imperva ID of your website.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "auth_type",
+            "in": "query",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Custom Certificate"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Rule": {
+      "type": "object",
+      "properties": {
+        "rule_id": {
+          "type": "integer",
+          "description": "Numeric identifier of the rule to operate on"
+        },
+        "name": {
+          "type": "string",
+          "description": "Rule name"
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "RULE_ACTION_REDIRECT",
+            "RULE_ACTION_SIMPLIFIED_REDIRECT",
+            "RULE_ACTION_REWRITE_URL",
+            "RULE_ACTION_REWRITE_HEADER",
+            "RULE_ACTION_REWRITE_COOKIE",
+            "RULE_ACTION_DELETE_HEADER",
+            "RULE_ACTION_DELETE_COOKIE",
+            "RULE_ACTION_RESPONSE_REWRITE_HEADER",
+            "RULE_ACTION_RESPONSE_DELETE_HEADER",
+            "RULE_ACTION_RESPONSE_REWRITE_RESPONSE_CODE",
+            "RULE_ACTION_FORWARD_TO_DC",
+            "RULE_ACTION_FORWARD_TO_PORT",
+            "RULE_ACTION_ALERT",
+            "RULE_ACTION_BLOCK",
+            "RULE_ACTION_BLOCK_USER",
+            "RULE_ACTION_BLOCK_IP",
+            "RULE_ACTION_RETRY",
+            "RULE_ACTION_INTRUSIVE_HTML",
+            "RULE_ACTION_CAPTCHA",
+            "RULE_ACTION_RATE",
+            "RULE_ACTION_CUSTOM_ERROR_RESPONSE",
+            "RULE_ACTION_WAF_OVERRIDE"
+          ],
+          "description": "Rule action.\n * RULE_ACTION_REDIRECT - Redirect rule. Redirect the client to a different URL, responding with a 30X response.\n * RULE_ACTION_SIMPLIFIED_REDIRECT - Redirect the client to a different URL using restricted redirect settings.\n * RULE_ACTION_REWRITE_URL - Redirect rule. Modify the path to which a specific request is targeted.\n * RULE_ACTION_REWRITE_HEADER - Redirect rule. Modify or add a request header before passing traffic to the origin server.\n * RULE_ACTION_REWRITE_COOKIE - Redirect rule. Allows the modification and addition of cookies that are sent by the client to the origin server. The cookie name and value should be indicated.\n * RULE_ACTION_DELETE_HEADER - Redirect rule. Remove a specific request header, which means that it won’t be sent to the origin server.\n * RULE_ACTION_DELETE_COOKIE - Redirect rule. Allows the removal a specific cookie set on the client, which means that it won’t be sent to the origin server.\n * RULE_ACTION_RESPONSE_REWRITE_HEADER - Redirect rule. Modify or add a response header before passing traffic by the origin server to the client.\n * RULE_ACTION_RESPONSE_DELETE_HEADER - Redirect rule. Remove a specific response header, which means that it won’t be sent to the client.\n * RULE_ACTION_RESPONSE_REWRITE_RESPONSE_CODE - Redirect rule. Modify the response status code before passing traffic by the origin server to the client.\n * RULE_ACTION_FORWARD_TO_DC - Redirect rule. Used to define the data center to which a specific request will be sent.\n * RULE_ACTION_FORWARD_TO_PORT - Redirect rule. Used to define the port to which a specific request will be sent.\n * RULE_ACTION_ALERT - Security rule. Generate a non blocking alert for this event.\n * RULE_ACTION_BLOCK - Security rule. Block the current request and generate an alert for this event.\n * RULE_ACTION_BLOCK_USER - Security rule. Block the current session and generate an alert for this event. Any subsequent request from the same Session will be blocked.\n * RULE_ACTION_BLOCK_IP - Security rule. Block the current IP and generate an alert for this event. Any subsequent request from the same IP will be blocked for a period of 10 minutes.\n * RULE_ACTION_RETRY - Security rule. Require any client matching the rule filters to support cookies in order to complete the request.\n * RULE_ACTION_INTRUSIVE_HTML - Security rule. Require any client matching the rule filters to support javascript in order to complete the request. Since the Javascript test is embedded in an HTML page, this action should only be enabled for HTML resources.\n * RULE_ACTION_CAPTCHA - Security rule. Require any client matching the rule filters to pass a CAPTCHA test in order to complete the request. Since the CAPTCHA test is embedded in an HTML page, this action should only be enabled for HTML resources.\n * RULE_ACTION_RATE -\tCount the number of requests received that match the rule filter.\n * RULE_ACTION_CUSTOM_ERROR_RESPONSE - Replace default error response & error code with custom ones. Once blocked a rule that matches the provided filter & error type will return a custom error & error code.\n * RULE_ACTION_WAF_OVERRIDE - Overrides the global WAF setting for a specific threat type.\n"
+        },
+        "filter": {
+          "type": "string",
+          "description": "The filter defines the conditions that trigger the rule action. For action RULE_ACTION_SIMPLIFIED_REDIRECT filter is not relevant. For other actions, if left empty, the rule is always run."
+        },
+        "response_code": {
+          "type": "integer",
+          "description": "For RULE_ACTION_REDIRECT or RULE_ACTION_SIMPLIFIED_REDIRECT rule's response code, valid values are 302, 301, 303, 307, 308. For RULE_ACTION_RESPONSE_REWRITE_RESPONSE_CODE rule's response code, valid values are all 3-digits numbers. For RULE_ACTION_CUSTOM_ERROR_RESPONSE, valid values are [ 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 419, 420, 422, 423, 424, 500, 501, 502, 503, 504, 505, 507 ]"
+        },
+        "add_missing": {
+          "type": "boolean",
+          "description": "Add cookie or header if it doesn't exist (Rewrite cookie rule only)"
+        },
+        "rewrite_existing": {
+          "type": "boolean",
+          "description": "Rewrite cookie or header if it exists"
+        },
+        "from": {
+          "type": "string",
+          "description": "Pattern to rewrite. For RULE_ACTION_REWRITE_URL - Url to rewrite. For RULE_ACTION_REWRITE_HEADER/RULE_ACTION_RESPONSE_REWRITE_HEADER - Header value to rewrite. For RULE_ACTION_REWRITE_COOKIE - Cookie value to rewrite"
+        },
+        "to": {
+          "type": "string",
+          "description": "Pattern to change to. RULE_ACTION_REWRITE_URL - Url to change to. RULE_ACTION_REWRITE_HEADER/RULE_ACTION_RESPONSE_REWRITE_HEADER - Header value to change to. RULE_ACTION_REWRITE_COOKIE - Cookie value to change to"
+        },
+        "rewrite_name": {
+          "type": "string",
+          "description": "Name of cookie or header to rewrite. Applies only for RULE_ACTION_REWRITE_COOKIE, RULE_ACTION_REWRITE_HEADER and RULE_ACTION_RESPONSE_REWRITE_HEADER"
+        },
+        "dc_id": {
+          "type": "integer",
+          "description": "Data center to forward request to. Applies only for RULE_ACTION_FORWARD_TO_DC"
+        },
+        "port_forwarding_context": {
+          "type": "string",
+          "description": "Context for port forwarding. \"Use Port Value\" or \"Use Header Name\". Applies only for RULE_ACTION_FORWARD_TO_PORT"
+        },
+        "port_forwarding_value": {
+          "type": "string",
+          "description": "Port number or header name for port forwarding. Applies only for RULE_ACTION_FORWARD_TO_PORT"
+        },
+        "rate_context": {
+          "type": "string",
+          "description": "The context of the rate counter. Possible values IP or Session. Applies only to rules using RULE_ACTION_RATE.",
+          "enum": [
+            "IP",
+            "Session"
+          ]
+        },
+        "rate_interval": {
+          "type": "integer",
+          "description": "The interval in seconds of the rate counter. Possible values is a multiple of 10 minimum 10 maximum 300. Applies only to rules using RULE_ACTION_RATE."
+        },
+        "error_type": {
+          "type": "string",
+          "description": "The error that triggers the rule. error.type.all triggers the rule regardless of the error type. Applies only for RULE_ACTION_CUSTOM_ERROR_RESPONSE",
+          "enum": [
+            "error.type.all",
+            "error.type.connection_timeout",
+            "error.type.access_denied",
+            "error.type.parse_req_error",
+            "error.type.parse_resp_error",
+            "error.type.connection_failed",
+            "error.type.deny_and_retry",
+            "error.type.ssl_failed",
+            "error.type.deny_and_captcha",
+            "error.type.2fa_required",
+            "error.type.no_ssl_config",
+            "error.type.no_ipv6_config"
+          ]
+        },
+        "error_response_format": {
+          "type": "string",
+          "description": "The format of the given error response in the error_response_data field. Applies only for RULE_ACTION_CUSTOM_ERROR_RESPONSE",
+          "enum": [
+            "json",
+            "xml"
+          ]
+        },
+        "error_response_data": {
+          "type": "string",
+          "description": "The response returned when the request matches the filter and is blocked. Applies only for RULE_ACTION_CUSTOM_ERROR_RESPONSE",
+          "example": {
+            "incidentId": "$INCIDENT_ID$",
+            "hostName": "$HOST_NAME$",
+            "errorCode": "$RR_CODE$",
+            "description": "$RR_DESCRIPTION$",
+            "timeUtc": "$TIME_UTC$",
+            "clientIp": "$CLIENT_IP$",
+            "proxyId": "$PROXY_ID$",
+            "proxyIp": "$PROXY_IP$"
+          }
+        },
+        "multiple_deletions": {
+          "type": "boolean",
+          "description": "Delete multiple header occurrences. Applies only to rules using RULE_ACTION_DELETE_HEADER and RULE_ACTION_RESPONSE_DELETE_HEADER"
+        },
+        "overrideWafRule": {
+          "type": "string",
+          "description": "The setting to override. Possible values: SQL Injection, Remote File Inclusion, Cross Site Scripting, Illegal Resource Access"
+        },
+        "overrideWafAction": {
+          "type": "string",
+          "description": "The action for the override rule. Possible values: Alert Only, Block Request, Block User, Block IP, Ignore"
+        }
+      },
+      "example": {
+        "name": "rule name",
+        "action": "RULE_ACTION_ALERT",
+        "filter": "ASN == 1"
+      }
+    },
+    "MaskingSettings": {
+      "type": "object",
+      "properties": {
+        "hashing_enabled": {
+          "type": "boolean",
+          "description": "Use the hashing method for masking fields in your logs and events page."
+        },
+        "hash_salt": {
+          "type": "string",
+          "description": "The hash salt to use for the hashing algorithm."
+        }
+      },
+      "example": {
+        "hashing_enabled": "true",
+        "hash_salt": "EJKHRT48375N4TKE7956NG"
+      }
+    },
+    "hsmBody": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "description": "An object that contains the certificate string and the hsmDetails object",
+          "properties": {
+            "certificate": {
+              "type": "string",
+              "description": "The certificate content in base64 format.",
+              "example": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSLOfd4d6gjFsRENDQW55Z0F3SUJBZ0lKQU1sSDZPNzB3b2FvTUEwR0NTcUdTSWIzRFFFQkN3VUFNR2t4Q3pBSkJnTlYKQkFZVEFrbE1NUTh3RFFZRFZRUUlEQVpKYzNKaFpXd3hFREFPQmdOVkJBY01CM0psYUc5MmIzUXhFakFRQmdOVgpCQW9NQ1UxNVEyOXRjR0Z1ZVRFTU1Bb0dBMVVFQ3d3RFpHVjJNUlV3RXdZRFZRUUREQXhwYm1OaGNIUmxjM1F1ClkyOHdIaGNOTWpFd09EQXlNRGt6TURJNVdoY05Nak13T0RBeU1Ea3pNREk1V2pCcE1Rc3dDUVlEVlFRR0V3SkoKVERFUE1BMEdBMVVFQ0F3R1NYTnlZV1ZzTVJBd0RnWURWUVFIREFkeVpXaHZkbTkwTVJJd0VBWURWUVFLREFsTgplVU52YlhCaGJua3hEREFLQmdOVkJBc01BMlJsZGpFVk1CTUdBMVVFQXd3TWFXNWpZWEIwWlhOMExtTnZNSUlCCklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUE3M2JGcXI3bTRtNmMvenc0dDREK2lINkMKYmdzenExTnZqcFArOG01NDk2U01RNlh3dCsyN21SWlM4TGRqbDBCV2VFWCtHTUlTUkc0aElPa0hYMkpTUlBScAozdUUrOXFOaVhOQ3lwZkxiZENSZHVDRnl0MER6WmtIUVRPZXZpL3JsN0p6ZXREZGZDd2R4dFlHNG40ZzM0VnFDClY2NkZHWXkvRFU0WERkeW5neFhscVRRZ0VRMGd5eThnUm9VR2VIb2N2Mi8wdFgxOUdWOFI5Q0FlaVlWOURGMHQKZ1VqY0VwcEJ3NDIwTG4wOW9JN2JEbjNYdFJMYWVZbk4vRytnbW5TVWp6NjByMTg2ZVVCV2MrK3N2dXc3Tmt3MwpsUTgwdGw2UTZOVU4vbjhqY0ZPczgvOGNpVDVxM0VxcXlLdlRhSXdJYVJZUEpEUjRZS1NYb3UvZ0lBZ1RYUUlECkFRQUJvejh3UFRBTEJnTlZIUThFQkFNQ0JEQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQkJRVUhBd0V3R1FZRFZSMFIKQkJJd0VJSU9LaTVwYm1OaGNIUmxjM1F1WTI4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFLT0xVUkZodldzZwpYeis1aUkwWTZaSnk2c0FOaGZIWTM5TTFrcytwMXBkZ1pkOHhKMFplenZNT000Yi80QjVmTWR5eXp2QUdMemgvCmtIZFFEU3NQUlRkcDVJT1RQd1VSNW9SN3owYjZpV2JWTTVBTW5SbHhkUHFydWhMc0JuZncxVG5MalVrYWtRSUgKS3hPenczdzdSZ24xaEsxZHVrUVc3WTdnem0vWnJuTXUwYkkvUnhrc1JLblhleGpnZXNybWZXWGtRSEowQXAxNQpEcjF3OTVrL1ZPbVBjcjViYTRIK1dkTURnTDhRYUpndGprZjdyd01MdkJDU1piR1FIQVArU2QyOEoyNVIwSXVrCjN2Y0dLMHM4UFoxeGFtU1BWU2VLaVZHNVU4OXdjb0FXTEEwS24zSVJDczRvNnptODE2QUNXb3pQM2g3bGlVSGUKaG9WS1BFZU1LbUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0="
+            },
+            "hsmDetails": {
+              "type": "array",
+              "description": "An array of your private key asset details in your HSM service",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "keyId": {
+                    "type": "string",
+                    "description": "The key ID for the private key in your HSM service.",
+                    "example": "257r65d8-9d62-8l16-91g2-7g64345278n2"
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "description": "The API_key for the private key in your HSM service.",
+                    "example": "MTAyRVdmMzBsZGRmOC00NzRmLWFmNWItMjk4MmU3YWMyYTkwOnQzMXRNZUE4dHhjYmtVTjZoWURRSldyY2w3WlNmVExtGXkzSJV0Z24SMzB1D3k2NDNGbnEwdkVQcnkDUXhGcGdsR1dPcrKFSTyaBBjSnJmTndwTkdn"
+                  },
+                  "hostName": {
+                    "type": "string",
+                    "description": "The address (URI) of your assets in your HSM service.",
+                    "example": "api.amer.smartkey.io"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "customCertificateBody": {
+      "type": "object",
+      "properties": {
+        "certificate": {
+          "type": "string",
+          "description": "The certificate content in base64 format.",
+          "example": "LS0tLS1CRUdJTiBDRVJU...WS1BFZU1LbUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0="
+        },
+        "private_key": {
+          "type": "string",
+          "description": "The private key of the certificate in base64 format.",
+          "example": "LS0tLS1CRUdJTiBQUklW...VRFIFhSXp0bUcvN3RSTkJZY3NFMnpXZmtFZ0VOSzUyajNvcTYKTzVnNjhoTm1PQTk1dlpaclRTekJYa2M9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K"
+        },
+        "passphrase": {
+          "type": "string",
+          "description": "The passphrase used to protect your SSL certificate.",
+          "example": "1234"
+        },
+        "auth_type": {
+          "type": "string",
+          "description": "The authentication type of the certificate (RSA or ECC)",
+          "example": "RSA"
+        }
+      }
+    }
+  }
+}
