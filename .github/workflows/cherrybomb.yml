@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get OAS
         run: |
-          curl https://raw.githubusercontent.com/blst-security/cherrybomb/main/swagger/examples/swagger2.json -o swagger.json
+          curl https://raw.githubusercontent.com/rubtoa/-ox/7a57b2f244a49f1d478053c5f8f99d1630192993/swagger/swagger_petstore.json?token=GHSAT0AAAAAAB45Y4XYE5SILYPDTWT3NU2EY5SSHHA -o swagger.json
 
       - name: Run Docker
         run: >
