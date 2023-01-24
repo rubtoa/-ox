@@ -1,1 +1,1 @@
-# -ox
+# Swagger project
